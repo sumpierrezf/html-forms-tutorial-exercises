@@ -6,18 +6,21 @@
 	margin: 0;
 	padding: 0;
 }
+
 body {
 	background-color: rgb(64, 64, 64);
 	font-family: montserrat, arial, verdana;
 }
+
 /*form styles*/
-.msform {
+form {
 	width: 400px;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
 }
-.msform fieldset {
+
+form fieldset {
 	background: white;
 	border: 0 none;
 	border-radius: 3px;
@@ -31,8 +34,9 @@ body {
 	/*stacking fieldsets above each other*/
 	position: absolute;
 }
+
 /*inputs*/
-.msform input {
+form input {
 	padding: 15px;
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	border-radius: 3px;
@@ -43,12 +47,14 @@ body {
 	color: #2c3e50;
 	font-size: 13px;
 }
-.msform input.error,
-.msform textarea.error {
+
+form input.error,
+form textarea.error {
 	border-color: rgb(255, 99, 71);
 }
+
 /*buttons*/
-.msform .action-button {
+form .action-button {
 	width: 100px;
 	background: rgb(64, 64, 64);
 	font-weight: bold;
@@ -60,33 +66,38 @@ body {
 	margin: 10px 5px;
 	transition: all 0.4s;
 }
-.msform .action-button:hover,
-.msform .action-button:focus {
+
+form .action-button:hover,
+form .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(255, 99, 71);
 	background-color: rgb(255, 99, 71);
 }
+
 /*headings*/
-.fs-title {
+h2 {
 	font-size: 15px;
 	text-transform: uppercase;
 	color: #2c3e50;
 	margin-bottom: 10px;
 }
-.fs-subtitle {
+
+h3 {
 	font-weight: normal;
 	font-size: 13px;
 	color: #666;
 	margin-bottom: 20px;
 }
+
 /*progressbar*/
-.progressbar {
+ul {
 	overflow: hidden;
 	/*CSS counters to number the steps*/
 	counter-reset: step;
 	width: 60%;
 	margin: 0 auto 30px;
 }
-.progressbar li {
+
+ul li:first-child {
 	list-style-type: none;
 	color: white;
 	text-transform: uppercase;
@@ -95,7 +106,8 @@ body {
 	float: left;
 	position: relative;
 }
-.progressbar li:before {
+
+ul li:before {
 	content: counter(step);
 	counter-increment: step;
 	width: 20px;
@@ -107,8 +119,9 @@ body {
 	border-radius: 50%;
 	margin: 0 auto 5px auto;
 }
+
 /*progressbar connectors*/
-.progressbar li:after {
+ul li:first-child:after {
 	content: "";
 	width: 100%;
 	height: 2px;
@@ -116,16 +129,19 @@ body {
 	position: absolute;
 	left: -50%;
 	top: 9px;
-	z-index: -1; /*put it behind the numbers*/
+	z-index: -1;
+	/*put it behind the numbers*/
 }
-.progressbar li:first-child:after {
+
+ul li:first-child:after {
 	/*connector not needed before the first step*/
 	content: none;
 }
+
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-.progressbar li.active:before,
-.progressbar li.active:after {
+ul li.active:before,
+ul li.active:after {
 	background: rgb(255, 99, 71);
 	color: white;
 }
